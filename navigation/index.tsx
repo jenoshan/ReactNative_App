@@ -10,7 +10,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import MenuScreen from '../screens/MenuScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import Dashboard from '../screens/Dashboard';
-import Calendar from '../screens/Calendar';
+import CalendarScreen from '../screens/Calendar';
 import Chat from '../screens/Chat';
 import Notification from '../screens/Notification';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
@@ -75,7 +75,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Calendar"
-        component={Calendar}
+        component={CalendarScreen}
         options={({ navigation }: RootTabScreenProps<'Calendar'>) => ({
           title: 'Calendar',
           tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,

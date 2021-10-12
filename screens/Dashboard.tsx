@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
 export default function Dashboard({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
+      <ScrollView>
       <View style={styles.separator}>
         <View style={styles.colorbox1}></View>
         <Text style={styles.title}>Maths - G/08</Text>
@@ -24,6 +24,7 @@ export default function Dashboard({ navigation }: RootTabScreenProps<'TabOne'>) 
         <View style={styles.colorbox4}></View>
         <Text style={styles.title}>English - G/08</Text>
       </View>
+      </ScrollView>
     </View>
   );
 }
