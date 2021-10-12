@@ -1,16 +1,21 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView, Image } from 'react-native';
 import { Text, View } from '../components/Themed';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { RootTabScreenProps } from '../types';
 
-export default function Chat() {
+export default function Chat({navigation} : RootTabScreenProps<'TabOne'>) {
   return (
     <View>
       <ScrollView>
         <View style={styles.container}>
-          <View style={styles.separator}>
-            <Image source={require('../assets/images/nouser.png')} style={styles.profile} />
-            <Text style={styles.title}>Kannathilaka</Text>
-          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('ChatView')}>
+            <View style={styles.separator}>
+              <Image source={require('../assets/images/nouser.png')} style={styles.profile} />
+              <Text style={styles.title}>Kannathilaka</Text>
+            </View>
+          </TouchableOpacity>
+          
           <View style={styles.separator}>
             <Image source={require('../assets/images/nouser.png')} style={styles.profile} />
             <Text style={styles.title}>jeyavera</Text>
@@ -72,7 +77,7 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     alignItems: 'flex-start',
-    marginTop: -8,
+    marginTop: -7,
     marginLeft: -16,
   }
 });

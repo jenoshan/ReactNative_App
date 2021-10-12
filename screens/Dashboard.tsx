@@ -1,17 +1,21 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Dashboard({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function Dashboard({navigation} : RootTabScreenProps<'TabOne'>) {
   return (
     <View style={styles.container}>
       <ScrollView>
-      <View style={styles.separator}>
-        <View style={styles.colorbox1}></View>
-        <Text style={styles.title}>Maths - G/08</Text>
-      </View>
+        <TouchableOpacity onPress={() => navigation.navigate('SubjectView')}>
+          <View style={styles.separator}>
+            <View style={styles.colorbox1}></View>
+            <Text style={styles.title}>Maths - G/08</Text>
+          </View>
+        </TouchableOpacity>
+      
       <View style={styles.separator}>
         <View style={styles.colorbox2}></View>
         <Text style={styles.title}>Science - G/08</Text>

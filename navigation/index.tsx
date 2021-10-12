@@ -13,6 +13,8 @@ import Dashboard from '../screens/Dashboard';
 import CalendarScreen from '../screens/Calendar';
 import Chat from '../screens/Chat';
 import Notification from '../screens/Notification';
+import SubjectView from '../screens/SubjectView';
+import ChatView from '../screens/ChatView';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -35,6 +37,8 @@ function RootNavigator() {
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Menu" component={MenuScreen} />
+        <Stack.Screen name="SubjectView" component={SubjectView} options={{headerTitle : 'Maths - G/08'}} />
+        <Stack.Screen name="ChatView" component={ChatView} options={{headerTitle : 'Kannathilaka'}} />
       </Stack.Group>
     </Stack.Navigator>
   );
